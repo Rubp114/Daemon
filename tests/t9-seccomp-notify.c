@@ -115,7 +115,7 @@ int main(void)
         return 1;
     }
     printf("STEP3 notification: pid=%d nr=%d (%s)\n",
-           req.pid, req.nr, req.nr == __NR_execve ? "execve" : "execveat");
+           req.pid, req.data.nr, req.data.nr == __NR_execve ? "execve" : "execveat");
 
     resp.id = req.id;
     resp.flags = SECCOMP_USER_NOTIF_FLAG_CONTINUE;   /* 交还内核继续执行 */
